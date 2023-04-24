@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -29,4 +31,9 @@ class Utils {
   static String convertDateToString(DateTime date) {
     return DateFormat('yyyy-MM-dd').format(date);
   }
+
+  static String getRandomImageUrl() {
+    return "https://raw.githubusercontent.com/ponlakrit1/flutter-trade-demo/main/lib/assets/images/post/post-03.jpg";
+  }
+
 }

@@ -1,223 +1,95 @@
 import 'package:flutter/material.dart';
+import 'package:trade_demo/utils/style.dart';
 
-import '../utils/utils.dart';
-
-Widget notificationTile({
+Widget NotificationWidget({
   required BuildContext context,
-  required String followerUsername,
-  required String followerImageUrl,
-  bool isFollowed = false,
+  required String username,
+  required String action,
+  required String profileImageUrl,
+  required String tradedImageUrl,
+  required String commentText,
+  required bool isLike,
+  required bool isFollow,
 }) {
   return ListTile(
-    contentPadding: EdgeInsets.all(8),
+    contentPadding: const EdgeInsets.all(8),
     leading: CircleAvatar(
       radius: 25,
-      backgroundImage: NetworkImage(followerImageUrl),
+      backgroundImage: NetworkImage(profileImageUrl),
     ),
     title: RichText(
       text: TextSpan(children: [
         TextSpan(
-          text: followerUsername,
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          text: username,
+          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         TextSpan(
-          text: ' started following you.',
-          style: TextStyle(
+          text: getNotificationText(action, commentText),
+          style: const TextStyle(
             color: Colors.black,
           ),
         ),
         TextSpan(
-          text: ' 2d',
+          text: ' x day',
           style: TextStyle(
             color: Colors.grey[400],
           ),
         ),
       ]),
     ),
-    //* Need some gesture detection over here to convert follow to following
-    trailing: Container(
-      width: isFollowed ? 100 : 85,
+    trailing: getNotificationAction(action, tradedImageUrl, isFollow)
+  );
+}
+
+String getNotificationText(String action, String commentText) {
+  if (action == "comment") {
+    return ' comment your post: $commentText';
+  } else if (action == "like") {
+    return ' like your post.';
+  } else if (action == "follow") {
+    return ' started following you.';
+  } else {
+    return '';
+  }
+}
+
+Widget getNotificationAction(String action, String tradedImageUrl, bool isFollow) {
+  if (action == "comment" || action == "like") {
+    return Container(
+      margin: const EdgeInsets.only(right: 10),
+      width: 45,
+      height: 45,
+      color: kPrimaryColor,
+      child: Image(
+        image: NetworkImage(tradedImageUrl),
+        fit: BoxFit.fill,
+      ),
+    );
+  } else if (action == "follow") {
+    return Container(
+      width: isFollow ? 100 : 85,
       height: 30,
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
-        border: isFollowed
+        border: isFollow
             ? Border.all(
-                color: Colors.grey[500]!,
-              )
+          color: Colors.grey[500]!,
+        )
             : Border.all(width: 0),
         borderRadius: BorderRadius.circular(5),
       ),
       child: Center(
         child: Text(
-          isFollowed ? 'Following' : 'Follow',
-          style: TextStyle(
+          isFollow ? 'Following' : 'Follow',
+          style: const TextStyle(
             color: Colors.black,
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
         ),
       ),
-    ),
-  );
-}
-
-/// Commnet acitivity on Instagram, can be of two types.
-/// It could be mention by other user.
-/// Or they could like your comment.
-Widget commentActivityTile({
-  required bool isMention,
-  required String comment,
-  required String otherUsername,
-  required String otherUserProfileImageUrl,
-  required String commentedOnMediaUrl,
-}) {
-  return ListTile(
-    isThreeLine: true,
-    contentPadding: EdgeInsets.only(left: 10),
-    leading: CircleAvatar(
-      radius: 25,
-      backgroundImage: NetworkImage(otherUserProfileImageUrl),
-    ),
-    title: RichText(
-      text: TextSpan(
-        children: [
-          TextSpan(
-            text: otherUsername,
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-          ),
-          TextSpan(
-            text: isMention
-                ? ' mentioned you in a comment:'
-                : ' liked your comment:',
-            style: TextStyle(
-              color: Colors.black,
-            ),
-          ),
-          TextSpan(
-            text: isMention ? ' @imdsk' : '',
-            style: TextStyle(
-              color: Colors.blue[100],
-            ),
-          ),
-          TextSpan(
-            text: comment,
-            style: TextStyle(
-              color: Colors.black,
-            ),
-          ),
-          TextSpan(
-            text: ' 3d',
-            style: TextStyle(
-              color: Colors.grey[400],
-            ),
-          ),
-        ],
-      ),
-    ),
-    subtitle: Padding(
-      padding: const EdgeInsets.only(top: 8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Icon(
-            Icons.favorite_border,
-            size: 12,
-            color: Colors.grey[400],
-          ),
-          SizedBox(width: 10),
-          Text(
-            'Reply',
-            style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-                color: Colors.grey[400]),
-          ),
-        ],
-      ),
-    ),
-    //* Need some gesture detection over here to convert follow to following
-    trailing: Container(
-      margin: EdgeInsets.only(right: 10),
-      width: 45,
-      height: 45,
-      color: Colors.pink,
-      child: Image(
-        image: NetworkImage(Utils.getRandomImageUrl()),
-        fit: BoxFit.fill,
-      ),
-    ),
-  );
-}
-
-Widget likedOnPost({
-  required List<String> likedUsernames,
-  required String postUrl,
-  required List<String> likedUserImageUrls,
-}) {
-  return ListTile(
-    contentPadding: EdgeInsets.only(left: 10),
-    leading: likedUserImageUrls.length > 1
-        ? Container(
-            height: 50,
-            width: 50,
-            child: Stack(
-              children: <Widget>[
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: CircleAvatar(
-                    radius: 20,
-                    backgroundImage:
-                        NetworkImage(likedUserImageUrls.elementAt(0)),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: CircleAvatar(
-                    radius: 20,
-                    backgroundImage:
-                        NetworkImage(likedUserImageUrls.elementAt(1)),
-                  ),
-                ),
-              ],
-            ),
-          )
-        : CircleAvatar(
-            radius: 25,
-            backgroundImage: NetworkImage(likedUserImageUrls.elementAt(0)),
-          ),
-    title: RichText(
-      text: TextSpan(
-        children: [
-          TextSpan(
-            text: "---",
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-          ),
-          TextSpan(
-            text: ' liked your post.',
-            style: TextStyle(
-              color: Colors.black,
-            ),
-          ),
-          TextSpan(
-            text: ' 3d',
-            style: TextStyle(
-              color: Colors.grey[400],
-            ),
-          ),
-        ],
-      ),
-    ),
-    //* Need some gesture detection over here to convert follow to following
-    trailing: Container(
-      margin: EdgeInsets.only(right: 10),
-      width: 45,
-      height: 45,
-      color: Colors.pink,
-      child: Image(
-        image: NetworkImage(postUrl),
-        fit: BoxFit.fill,
-      ),
-    ),
-  );
+    );
+  } else {
+    return Container();
+  }
 }

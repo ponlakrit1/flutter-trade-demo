@@ -1,14 +1,49 @@
 {
-  "traders": [
+  "notification": [
     {
-      "name": "User tmp 01",
-      "userName": "usertmp01",
-      "profileImageUrl": "https://raw.githubusercontent.com/ponlakrit1/flutter-trade-demo/main/lib/assets/images/post/post-01.jpg"
+      "username": "User01",
+      "action": "comment",
+      "profileImageUrl": "https://raw.githubusercontent.com/ponlakrit1/flutter-trade-demo/main/lib/assets/images/post/post-01.jpg",
+      "tradedImageUrl": "https://raw.githubusercontent.com/ponlakrit1/flutter-trade-demo/main/lib/assets/images/post/post-03.jpg",
+      "commentText": "Nice and cool!",
+      "isLike": false,
+      "isFollow": false
     },
     {
-      "name": "User tmp 02",
-      "userName": "usertmp02",
-      "profileImageUrl": "https://raw.githubusercontent.com/ponlakrit1/flutter-trade-demo/main/lib/assets/images/post/post-03.jpg"
+      "username": "User01",
+      "action": "like",
+      "profileImageUrl": "https://raw.githubusercontent.com/ponlakrit1/flutter-trade-demo/main/lib/assets/images/post/post-04.jpg",
+      "tradedImageUrl": "https://raw.githubusercontent.com/ponlakrit1/flutter-trade-demo/main/lib/assets/images/post/post-03.jpg",
+      "commentText": "",
+      "isLike": true,
+      "isFollow": false
+    },
+    {
+      "username": "User02",
+      "action": "comment",
+      "profileImageUrl": "https://raw.githubusercontent.com/ponlakrit1/flutter-trade-demo/main/lib/assets/images/post/post-01.jpg",
+      "tradedImageUrl": "https://raw.githubusercontent.com/ponlakrit1/flutter-trade-demo/main/lib/assets/images/post/post-05.jpg",
+      "commentText": "Very nice shoes.",
+      "isLike": false,
+      "isFollow": false
+    },
+    {
+      "username": "User03",
+      "action": "comment",
+      "profileImageUrl": "https://raw.githubusercontent.com/ponlakrit1/flutter-trade-demo/main/lib/assets/images/post/post-05.jpg",
+      "tradedImageUrl": "https://raw.githubusercontent.com/ponlakrit1/flutter-trade-demo/main/lib/assets/images/post/post-03.jpg",
+      "commentText": "How many price?",
+      "isLike": false,
+      "isFollow": false
+    },
+    {
+      "username": "User03",
+      "action": "follow",
+      "profileImageUrl": "https://raw.githubusercontent.com/ponlakrit1/flutter-trade-demo/main/lib/assets/images/post/post-04.jpg",
+      "tradedImageUrl": "https://raw.githubusercontent.com/ponlakrit1/flutter-trade-demo/main/lib/assets/images/post/post-02.jpg",
+      "commentText": "",
+      "isLike": false,
+      "isFollow": true
     }
   ]
 }

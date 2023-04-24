@@ -1,115 +1,99 @@
 import 'dart:convert';
 
-class Post {
+class NotificationModel {
   final String username;
+  final String action;
   final String profileImageUrl;
-  final String postMediaUrl;
-  final bool isLiked;
-  final bool isSaved;
-  final int likeCount;
-  final String postCaption;
-  final int commentCount;
-  final String postCreationDate;
+  final String tradedImageUrl;
+  final String commentText;
+  final bool isLike;
+  final bool isFollow;
 
-  Post({
+  NotificationModel({
     required this.username,
+    required this.action,
     required this.profileImageUrl,
-    required this.postMediaUrl,
-    required this.isLiked,
-    required this.isSaved,
-    required this.likeCount,
-    required this.postCaption,
-    required this.commentCount,
-    required this.postCreationDate,
+    required this.tradedImageUrl,
+    required this.commentText,
+    required this.isLike,
+    required this.isFollow,
   });
 
-  Post copyWith({
+  NotificationModel copyWith({
     required String username,
+    required String action,
     required String profileImageUrl,
-    required String postMediaUrl,
-    required bool isLiked,
-    required bool isSaved,
-    required int likeCount,
-    required String postCaption,
-    required int commentCount,
-    required String postCreationDate,
+    required String tradedImageUrl,
+    required String commentText,
+    required bool isLike,
+    required bool isFollow,
   }) {
-    return Post(
+    return NotificationModel(
       username: username,
+      action: action,
       profileImageUrl: profileImageUrl,
-      postMediaUrl: postMediaUrl,
-      isLiked: isLiked,
-      isSaved: isSaved,
-      likeCount: likeCount,
-      postCaption: postCaption,
-      commentCount: commentCount,
-      postCreationDate: postCreationDate,
+      tradedImageUrl: tradedImageUrl,
+      commentText: commentText,
+      isLike: isLike,
+      isFollow: isFollow,
     );
   }
 
   Map<String, dynamic> toMap() {
     return {
       'username': username,
+      'action': action,
       'profileImageUrl': profileImageUrl,
-      'postMediaUrl': postMediaUrl,
-      'isLiked': isLiked,
-      'isSaved': isSaved,
-      'likeCount': likeCount,
-      'postCaption': postCaption,
-      'commentCount': commentCount,
-      'postCreationDate': postCreationDate,
+      'tradedImageUrl': tradedImageUrl,
+      'commentText': commentText,
+      'isLike': isLike,
+      'isFollow': isFollow,
     };
   }
 
-  static Post fromMap(Map<String, dynamic> map) {
-    return Post(
+  static NotificationModel fromMap(Map<String, dynamic> map) {
+    return NotificationModel(
       username: map['username'],
+      action: map['action'],
       profileImageUrl: map['profileImageUrl'],
-      postMediaUrl: map['postMediaUrl'],
-      isLiked: map['isLiked'],
-      isSaved: map['isSaved'],
-      likeCount: map['likeCount'],
-      postCaption: map['postCaption'],
-      commentCount: map['commentCount'],
-      postCreationDate: map['postCreationDate'],
+      tradedImageUrl: map['tradedImageUrl'],
+      commentText: map['commentText'],
+      isLike: map['isLike'],
+      isFollow: map['isFollow'],
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  static Post fromJson(String source) => fromMap(json.decode(source));
+  static NotificationModel fromJson(String source) => fromMap(json.decode(source));
 
   @override
   String toString() {
-    return 'Post(username: $username, profileImageUrl: $profileImageUrl, postMediaUrl: $postMediaUrl, isLiked: $isLiked, isSaved: $isSaved, likeCount: $likeCount, postCaption: $postCaption, commentCount: $commentCount, postCreationDate: $postCreationDate)';
+    return 'Post(username: $username, action: $action, profileImageUrl: $profileImageUrl, tradedImageUrl: $tradedImageUrl, commentText: $commentText, isLike: $isLike, isFollow: $isFollow)';
   }
 
   @override
   bool operator == (Object o) {
     if (identical(this, o)) return true;
 
-    return o is Post &&
+    return o is NotificationModel &&
         o.username == username &&
+        o.action == action &&
         o.profileImageUrl == profileImageUrl &&
-        o.postMediaUrl == postMediaUrl &&
-        o.isLiked == isLiked &&
-        o.isSaved == isSaved &&
-        o.likeCount == likeCount &&
-        o.postCaption == postCaption &&
-        o.commentCount == commentCount &&
-        o.postCreationDate == postCreationDate;
+        o.tradedImageUrl == tradedImageUrl &&
+        o.commentText == commentText &&
+        o.isLike == isLike &&
+        o.isFollow == isFollow;
   }
 
   @override
   int get hashCode {
     return username.hashCode ^
+    action.hashCode ^
     profileImageUrl.hashCode ^
-    postMediaUrl.hashCode ^
-    isLiked.hashCode ^
-    isSaved.hashCode ^
-    likeCount.hashCode ^
-    postCaption.hashCode ^
-    commentCount.hashCode ^
-    postCreationDate.hashCode;
+    tradedImageUrl.hashCode ^
+    commentText.hashCode ^
+    isLike.hashCode ^
+    isFollow.hashCode;
   }
 }

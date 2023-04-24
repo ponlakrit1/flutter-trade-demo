@@ -1,15 +1,15 @@
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 
-import '../model/search_trader.dart';
+import '../model/notification.dart';
 
-class SearchService {
+class NotificationService {
 
-  static Future<List<SearchTraderModel>> getFutureListOfTradersFromJson() async {
-    final String jsonString = await rootBundle.loadString('lib/assets/json/traders.json');
-    final List<dynamic> mapObj = jsonDecode(jsonString)['traders'] as List;
+  static Future<List<NotificationModel>> getFutureListOfNotificationFromJson() async {
+    final String jsonString = await rootBundle.loadString('lib/assets/json/notification.json');
+    final List<dynamic> mapObj = jsonDecode(jsonString)['notification'] as List;
 
-    return mapObj.map((traders) => SearchTraderModel.fromMap(traders)).toList();
+    return mapObj.map((notification) => NotificationModel.fromMap(notification)).toList();
   }
 
 }
