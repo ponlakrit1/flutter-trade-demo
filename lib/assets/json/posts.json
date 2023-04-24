@@ -1,0 +1,114 @@
+{
+  "posts": [
+    {
+      "username": "User tmp 01",
+      "profileImageUrl": "https://gitlab.com/2Shours/alphapic/raw/master/1.jpeg",
+      "postMediaUrl": "https://gitlab.com/2Shours/alphapic/raw/master/1.jpeg",
+      "isLiked": true,
+      "isSaved": false,
+      "likeCount": 1000,
+      "postCaption": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "commentCount": 80,
+      "postCreationDate": "2023-01-01"
+    },
+    {
+      "username": "User tmp 02",
+      "profileImageUrl": "https://gitlab.com/2Shours/alphapic/raw/master/2.jpeg",
+      "postMediaUrl": "https://gitlab.com/2Shours/alphapic/raw/master/2.jpeg",
+      "isLiked": false,
+      "isSaved": true,
+      "likeCount": 500,
+      "postCaption": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "commentCount": 50,
+      "postCreationDate": "2023-01-01"
+    },
+    {
+      "username": "User tmp 03",
+      "profileImageUrl": "https://gitlab.com/2Shours/alphapic/raw/master/3.jpeg",
+      "postMediaUrl": "https://gitlab.com/2Shours/alphapic/raw/master/3.jpeg",
+      "isLiked": true,
+      "isSaved": true,
+      "likeCount": 200,
+      "postCaption": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "commentCount": 80,
+      "postCreationDate": "2023-01-01"
+    },
+    {
+      "username": "User tmp 04",
+      "profileImageUrl": "https://gitlab.com/2Shours/alphapic/raw/master/4.jpeg",
+      "postMediaUrl": "https://gitlab.com/2Shours/alphapic/raw/master/4.jpeg",
+      "isLiked": false,
+      "isSaved": false,
+      "likeCount": 55,
+      "postCaption": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "commentCount": 80,
+      "postCreationDate": "2023-01-01"
+    },
+    {
+      "username": "User tmp 05",
+      "profileImageUrl": "https://gitlab.com/2Shours/alphapic/raw/master/5.jpeg",
+      "postMediaUrl": "https://gitlab.com/2Shours/alphapic/raw/master/5.jpeg",
+      "isLiked": true,
+      "isSaved": true,
+      "likeCount": 1,
+      "postCaption": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "commentCount": 5,
+      "postCreationDate": "2023-01-01"
+    },
+    {
+      "username": "User tmp 06",
+      "profileImageUrl": "https://gitlab.com/2Shours/alphapic/raw/master/6.jpeg",
+      "postMediaUrl": "https://gitlab.com/2Shours/alphapic/raw/master/6.jpeg",
+      "isLiked": true,
+      "isSaved": true,
+      "likeCount": 11,
+      "postCaption": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "commentCount": 80,
+      "postCreationDate": "2023-01-01"
+    },
+    {
+      "username": "User tmp 07",
+      "profileImageUrl": "https://gitlab.com/2Shours/alphapic/raw/master/7.jpeg",
+      "postMediaUrl": "https://gitlab.com/2Shours/alphapic/raw/master/7.jpeg",
+      "isLiked": false,
+      "isSaved": true,
+      "likeCount": 78,
+      "postCaption": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "commentCount": 88,
+      "postCreationDate": "2023-01-01"
+    },
+    {
+      "username": "User tmp 08",
+      "profileImageUrl": "https://gitlab.com/2Shours/alphapic/raw/master/8.jpeg",
+      "postMediaUrl": "https://gitlab.com/2Shours/alphapic/raw/master/8.jpeg",
+      "isLiked": true,
+      "isSaved": false,
+      "likeCount": 11,
+      "postCaption": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "commentCount": 95,
+      "postCreationDate": "2023-01-01"
+    },
+    {
+      "username": "User tmp 09",
+      "profileImageUrl": "https://gitlab.com/2Shours/alphapic/raw/master/9.jpeg",
+      "postMediaUrl": "https://gitlab.com/2Shours/alphapic/raw/master/9.jpeg",
+      "isLiked": true,
+      "isSaved": false,
+      "likeCount": 100,
+      "postCaption": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "commentCount": 80,
+      "postCreationDate": "2023-01-01"
+    },
+    {
+      "username": "User tmp 10",
+      "profileImageUrl": "https://gitlab.com/2Shours/alphapic/raw/master/10.jpeg",
+      "postMediaUrl": "https://gitlab.com/2Shours/alphapic/raw/master/11.jpeg",
+      "isLiked": true,
+      "isSaved": false,
+      "likeCount": 100,
+      "postCaption": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "commentCount": 80,
+      "postCreationDate": "2023-01-01"
+    }
+  ]
+}

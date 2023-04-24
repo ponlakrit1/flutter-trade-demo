@@ -28,10 +28,10 @@ class _BottomNavigationBarWidgetScreen extends State<BottomNavigationBarScreen> 
   Widget build(BuildContext context) {
     return WillPopScope(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text(_appBarText(_selectBottomNavbar)),
-          backgroundColor: kPrimaryColor,
-        ),
+        // appBar: AppBar(
+        //   title: Text(_appBarText(_selectBottomNavbar)),
+        //   backgroundColor: kPrimaryColor,
+        // ),
         body: SafeArea(
           child: _bodyContainer(_selectBottomNavbar),
         ),

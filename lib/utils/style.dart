@@ -9,13 +9,23 @@ const kTextStyleHeader = TextStyle(
     fontSize: 28
 );
 
+const kTextStyleHeaderPrimary = TextStyle(
+    fontWeight: FontWeight.w400,
+    color: kPrimaryColor,
+    fontSize: 28
+);
+
 const kTextStyleDetail = TextStyle(
     color: Colors.black,
-    fontSize: 24
+    fontSize: 21
 );
 
 const kTextStyleSubDetail = TextStyle(
     color: Colors.black,
-    fontSize: 16
+    fontSize: 14
+);
+
+const kTextStyleSubDetailGray = TextStyle(
+    color: Colors.grey
 );
 
