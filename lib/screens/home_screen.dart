@@ -42,31 +42,27 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ]
       ),
-      body: SizedBox(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: ListView.builder(
-          physics: const BouncingScrollPhysics(),
-          itemCount: 2,
-          itemBuilder: (context, index) {
-            return FutureBuilder(
-              future: _futureListOfPost,
-              builder: (BuildContext context, AsyncSnapshot snapshot) {
-                if (snapshot.hasData) {
-                  List<Post> postList = snapshot.data;
-                  return ListView.builder(
-                    shrinkWrap: true,
-                    physics: const BouncingScrollPhysics(),
-                    itemCount: postList.length,
-                    itemBuilder: (context, index) {
-                      return _postWidget(context: context, post: postList.elementAt(index));
-                    },
-                  );
-                }
-                return const CircularProgressIndicator();
-              },
-            );
-          },
+      body: SafeArea(
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          child: FutureBuilder(
+            future: _futureListOfPost,
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              if (snapshot.hasData) {
+                List<Post> postList = snapshot.data;
+                return ListView.builder(
+                  shrinkWrap: true,
+                  physics: const BouncingScrollPhysics(),
+                  itemCount: postList.length,
+                  itemBuilder: (context, index) {
+                    return _postWidget(context: context, post: postList.elementAt(index));
+                  },
+                );
+              }
+              return const CircularProgressIndicator();
+            },
+          ),
         ),
       )
     );

@@ -85,7 +85,7 @@ class Post {
   }
 
   @override
-  bool operator ==(Object o) {
+  bool operator == (Object o) {
     if (identical(this, o)) return true;
 
     return o is Post &&

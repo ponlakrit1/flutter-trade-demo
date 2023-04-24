@@ -1,0 +1,14 @@
+{
+  "traders": [
+    {
+      "name": "User tmp 01",
+      "userName": "usertmp01",
+      "profileImageUrl": "https://raw.githubusercontent.com/ponlakrit1/flutter-trade-demo/main/lib/assets/images/post/post-01.jpg"
+    },
+    {
+      "name": "User tmp 02",
+      "userName": "usertmp02",
+      "profileImageUrl": "https://raw.githubusercontent.com/ponlakrit1/flutter-trade-demo/main/lib/assets/images/post/post-03.jpg"
+    }
+  ]
+}
