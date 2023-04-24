@@ -1,6 +1,8 @@
 import 'package:trade_demo/utils/style.dart';
 import 'package:flutter/material.dart';
 
+import '../routes.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -49,7 +51,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: kPrimaryColor,
                 minWidth: double.infinity,
                 onPressed: () {
-
+                  Navigator.pushReplacementNamed(
+                    context,
+                    RoutePaths.BottomNavigationBar,
+                  );
                 },
                 child: const Text(
                   "Sign In",

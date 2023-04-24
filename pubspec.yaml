@@ -97,5 +97,25 @@ flutter:
         - asset: lib/assets/fonts/Kanit-Bold.ttf
           weight: 600
 
+    - family: homeNav
+      fonts:
+        - asset: lib/assets/fonts/custom/home_nav.ttf
+
+    - family: addNav
+      fonts:
+        - asset: lib/assets/fonts/custom/add_nav.ttf
+
+    - family: notiNav
+      fonts:
+        - asset: lib/assets/fonts/custom/noti_nav.ttf
+
+    - family: searchNav
+      fonts:
+        - asset: lib/assets/fonts/custom/search_nav.ttf
+
+    - family: heartPost
+      fonts:
+        - asset: lib/assets/fonts/custom/heart_post.ttf
+
   assets:
     - lib/assets/images/
