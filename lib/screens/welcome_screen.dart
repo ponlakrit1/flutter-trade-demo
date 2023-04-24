@@ -15,13 +15,13 @@ class WelcomeScreen extends StatelessWidget {
             const Image(image: AssetImage("lib/assets/images/welcome_people.png")),
             const Spacer(flex: 2),
             const Text(
-              "Welcome to flutter \nChat demo",
+              "Welcome to flutter \nTrade demo",
               textAlign: TextAlign.center,
               style: kTextStyleHeader,
             ),
             const SizedBox(height: 20.0,),
             Text(
-              "A Flutter chat demo project.",
+              "Have some interesting today?",
               textAlign: TextAlign.center,
               style: kTextStyleSubDetail.copyWith(color: Colors.black.withOpacity(0.5))
             ),
@@ -29,7 +29,10 @@ class WelcomeScreen extends StatelessWidget {
             FittedBox(
               child: TextButton(
                 onPressed: () {
-
+                  Navigator.pushReplacementNamed(
+                    context,
+                    RoutePaths.Login,
+                  );
                 },
                 child: Row(
                   children: [

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color(0xFF3F51B5);
-const kSecondaryColor = Color(0xFFFF4081);
+const kPrimaryColor = Color(0xFF7225FF);
+const kSecondaryColor = Color(0xFFFF2581);
 
 const kTextStyleHeader = TextStyle(
     fontWeight: FontWeight.w400,
