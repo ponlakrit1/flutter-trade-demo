@@ -32,7 +32,7 @@ class _SearchTraderListState extends State<SearchTraderList> {
                 children: <Widget>[
                   CircleAvatar(
                     backgroundImage: NetworkImage(widget.imageUrl),
-                    maxRadius: 30,
+                    maxRadius: 25,
                   ),
                   const SizedBox(
                     width: 16,
@@ -45,7 +45,7 @@ class _SearchTraderListState extends State<SearchTraderList> {
                         children: <Widget>[
                           Text(
                             widget.name,
-                            style: kTextStyleDetail,
+                            style: kTextStyleSubDetail,
                           ),
                           const SizedBox(
                             height: 6,

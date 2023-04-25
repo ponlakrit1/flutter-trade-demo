@@ -21,19 +21,15 @@ Widget NotificationWidget({
       text: TextSpan(children: [
         TextSpan(
           text: username,
-          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: kTextStyleSubDetail.copyWith(fontWeight: FontWeight.bold),
         ),
         TextSpan(
           text: getNotificationText(action, commentText),
-          style: const TextStyle(
-            color: Colors.black,
-          ),
+          style: kTextStyleSubDetail,
         ),
-        TextSpan(
+        const TextSpan(
           text: ' x day',
-          style: TextStyle(
-            color: Colors.grey[400],
-          ),
+          style: kTextStyleSubDetailGray,
         ),
       ]),
     ),
@@ -81,11 +77,7 @@ Widget getNotificationAction(String action, String tradedImageUrl, bool isFollow
       child: Center(
         child: Text(
           isFollow ? 'Following' : 'Follow',
-          style: const TextStyle(
-            color: Colors.black,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
+          style: kTextStyleSubDetail.copyWith(fontWeight: FontWeight.bold),
         ),
       ),
     );
