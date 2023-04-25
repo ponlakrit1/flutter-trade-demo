@@ -1,6 +1,14 @@
-# trade_demo
+# Trade demo
 
-A new Flutter project.
+Flutter trade item demo project.
+
+## Installation
+
+Use the package manager [flutter](https://docs.flutter.dev/get-started/install) to install.
+
+```bash
+flutter pub get
+```
 
 ## Getting Started
 
